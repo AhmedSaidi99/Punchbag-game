@@ -28,7 +28,7 @@
 }
 
 #bag {
-    background-image: url(/imgs/bag.png);
+    background-image: url(./imgs/bag.png);
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
@@ -43,7 +43,7 @@
 }
 
 #bag.burst{
-    background-image: url(/imgs/bag-burst.png);
+    background-image: url(./imgs/bag-burst.png);
 }
 
 #bag-health{
