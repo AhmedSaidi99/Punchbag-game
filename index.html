@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/imgs/icon.png">
+    <title>Punchbag Game</title>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div id="player-input" v-if="!started" >
+            <input type="text" v-on:keyup.enter="start" v-model="player" placeholder="Player name..." />
+        </div>
+
+        <div v-if="started">
+            <div id="bag" v-bind:class="{burst: ended}">
+                <div v-if="ended">You Killed It!!! {{ player }}</div>
+            </div>
+
+            <div id="bag-health">
+                <div v-bind:style="{width: health + '%'}"></div>
+            </div>
+
+            <div id="controls">
+                <button v-on:click="punch" v-show="!ended">Punch</button>
+                <button v-on:click="restart">Restart</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
